@@ -12,13 +12,14 @@ export const homeWorkReducer = (
   switch (action.type) {
     case "sort": {
       // by name
-      let copy = state;
+
       return action.payload === "up"
-        ? copy.sort((a, b) => (a.name < b.name ? -1 : 1))
-        : copy.sort((a, b) => (a.name > b.name ? -1 : 1)); // need to fix
+        ? [...state].sort((a, b) => (a.name < b.name ? -1 : 1))
+        : [...state].sort((a, b) => (a.name > b.name ? -1 : 1)); // need to fix
     }
     case "check": {
-      return state.filter((s) => s.age > action.payload); // need to fix
+      return state.filter((s) => s.age > action.payload);
+      // need to fix
     }
     default:
       return state;
