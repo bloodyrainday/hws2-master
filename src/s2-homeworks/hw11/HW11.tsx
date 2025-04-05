@@ -20,7 +20,6 @@ function HW11() {
   console.log("value", value1, value2);
   const change = (event: Event, value: number | number[]) => {
     // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
-    console.log("change", event, value);
     if (!Array.isArray(value)) {
       setValue1(value);
     } else {
