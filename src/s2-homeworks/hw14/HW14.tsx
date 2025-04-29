@@ -32,16 +32,18 @@ const HW14 = () => {
 
   const sendQuery = (value: string) => {
     setLoading(true);
-    getTechs(value).then((res) => {
-      // делает студент
+    getTechs(value)
+      .then((res) => {
+        // делает студент
 
-      // сохранить пришедшие данные
-      if (res) {
-        setTechs(res.data.techs);
-      }
+        // сохранить пришедшие данные
+        if (res) {
+          setTechs(res.data.techs);
+        }
 
-      //
-    });
+        //
+      })
+      .finally(() => setLoading(false));
   };
 
   const onChangeText = (value: string) => {
@@ -56,8 +58,7 @@ const HW14 = () => {
 
   useEffect(() => {
     const params = Object.fromEntries(searchParams);
-    console.log("params", params);
-    console.log("params.find", params.find);
+
     sendQuery(params.find || "");
     setFind(params.find || "");
   }, []);
