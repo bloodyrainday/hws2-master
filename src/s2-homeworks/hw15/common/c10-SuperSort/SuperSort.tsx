@@ -1,9 +1,13 @@
+import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
 import React from "react";
+import downArrow from "./downArrow.svg";
+import upArrow from "./upArrow.svg";
+import noneArrow from "./noneArrow.svg";
 
 // добавить в проект иконки и импортировать
-const downIcon = "[\\/]";
-const upIcon = "[/\\]";
-const noneIcon = "[--]";
+const downIcon = downArrow;
+const upIcon = upArrow;
+const noneIcon = noneArrow;
 
 export type SuperSortPropsType = {
   id?: string;
@@ -46,11 +50,10 @@ const SuperSort: React.FC<SuperSortPropsType> = ({
   return (
     <span id={id + "-sort-" + value} onClick={onChangeCallback}>
       {/*сделать иконку*/}
-      {/*<img*/}
-      {/*    id={id + '-icon-' + sort}*/}
-      {/*    src={icon}*/}
-      {/*/>*/}
-      {icon} {/*а это убрать*/}
+
+      <img id={id + "-icon-" + sort} src={icon} />
+
+      {/* {icon} а это убрать */}
     </span>
   );
 };
