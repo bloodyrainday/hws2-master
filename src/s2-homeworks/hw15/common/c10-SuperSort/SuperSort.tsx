@@ -1,4 +1,3 @@
-import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
 import React from "react";
 import downArrow from "./downArrow.svg";
 import upArrow from "./upArrow.svg";
@@ -17,7 +16,6 @@ export type SuperSortPropsType = {
 };
 
 export const pureChange = (sort: string, down: string, up: string) => {
-  console.log("sort", sort, "down", down, "up", up);
   // пишет студент, sort: (click) => down (click) => up (click) => '' (click) => down ...
   switch (sort) {
     case "":

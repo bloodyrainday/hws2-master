@@ -1,27 +1,36 @@
 .tech {
-    width: 50vw;
+  width: 20vw;
 }
 
 .developer {
-
 }
 
 .techHeader {
-    width: 50vw;
+  width: 20vw;
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .developerHeader {
-
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .row {
-    display: flex;
+  width: 30vw;
+  display: flex;
+  padding: 10px 0 10px 17px;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .rowHeader {
-    display: flex;
+  display: flex;
+  background-color: #e5e5e5;
+  width: 30vw;
+  padding: 10px 0 10px 17px;
 }
 
 .loading {
-
 }
