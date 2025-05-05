@@ -63,23 +63,22 @@ const HW15 = () => {
   };
 
   const onChangePagination = (newPage: number, newCount: number) => {
-    console.log(newPage, newCount);
+    console.log("sort", sort);
     // делает студент
     setPage(newPage);
     setCount(newCount);
-    sendQuery({ page: newPage, count: newCount });
-    //setSearchParams({ sort, page: newPage, count: newCount });
+    sendQuery({ sort, page: newPage, count: newCount });
+    setSearchParams(JSON.stringify({ page: newPage, count: newCount }));
     //
   };
 
   const onChangeSort = (newSort: string) => {
     // делает студент
-    console.log("newSort", newSort);
     setSort(newSort);
     // setPage(1) // при сортировке сбрасывать на 1 страницу
     setPage(1);
-    sendQuery({ sort: newSort });
-    // setSearchParams(
+    sendQuery({ sort: newSort, page, count });
+    setSearchParams({ sort: newSort });
     //
   };
 
