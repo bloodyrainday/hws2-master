@@ -5,6 +5,7 @@ import axios from "axios";
 import SuperPagination from "./common/c9-SuperPagination/SuperPagination";
 import { useSearchParams } from "react-router-dom";
 import SuperSort from "./common/c10-SuperSort/SuperSort";
+import { Box, CircularProgress } from "@mui/material";
 
 /*
  * 1 - дописать SuperPagination
@@ -51,7 +52,7 @@ const HW15 = () => {
     setLoading(true);
     getTechs(params).then((res) => {
       // делает студент
-
+      setLoading(false);
       // сохранить пришедшие данные
       if (res) {
         setTechs(res.data.techs);
@@ -108,7 +109,7 @@ const HW15 = () => {
       <div className={s2.hw}>
         {idLoading && (
           <div id={"hw15-loading"} className={s.loading}>
-            Loading...
+            <CircularProgress size={100} />
           </div>
         )}
 
